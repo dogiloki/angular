@@ -1,0 +1,32 @@
+<h1>{{titulo}}</h1>
+
+<form>
+  <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre"><br>
+  <input type="text" name="apellido" placeholder="Apellido" [(ngModel)]="apellido"><br>
+  <input type="text" name="cargo" placeholder="Cargo" [(ngModel)]="cargo"><br>
+  <input type="submit" value="Registrarse" (click)="registrar()"><br>
+</form>
+
+<!-- *ngIf="condicional;else contenido" compara si se debe mostrar (existe) la etiqueta -->
+
+<p *ngIf="esRegistrado; else sinRegistrar"> <!-- sinRegistrar es un identificador de una etiqueda html -->
+  {{mensaje}} con el nombre
+  <!-- [ngClass="{identificador_css:condicional"] Hacer operaciones de comparación con identificadores css -->
+  <span [ngClass]="{texto_nombre:cargo=='director'}">{{nombre}} {{apellido}}</span>
+  esta registrado y tiene el cargo de
+  <!-- [ngStyle="{código css. Ejemplo color:'blue'}"] Hacer operaciones de comparación con código css -->
+  <span [ngStyle]="{color:(cargo=='director'?'blue':'black')}">{{cargo}}</span>
+</p>
+
+<!-- <ng-template> No carga por defecto, sólo cuando es llamado -->
+<ng-template #sinRegistrar>
+  Nadie registrado
+</ng-template>
+
+<br><br>
+
+<!-- *ngFor="declaración of array; index as i"  -->
+
+<ul>
+  <li *ngFor="let noticia of noticias index as a">{{noticia.titulo}}</li>
+</ul>

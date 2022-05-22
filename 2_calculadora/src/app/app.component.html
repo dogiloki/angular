@@ -1,0 +1,23 @@
+<h1>{{titulo}}</h1>
+<form>
+    Número 1: <input type="number" [(ngModel)]="num1" name="num1"><br><br>
+    Número 2: <input type="number" [(ngModel)]="num2" name="num2"><br><br>
+    <input type="radio" name="operador" value="suma" (click)="cambiarOperador($event)">Sumar<br>
+    <input type="radio" name="operador" value="resta" (click)="cambiarOperador($event)">Resta<br>
+    <input type="radio" name="operador" value="multiplicacion" (click)="cambiarOperador($event)">Multiplicación<br>
+    <input type="radio" name="operador" value="division" (click)="cambiarOperador($event)">División<br>
+    <input type="radio" name="operador" value="potencia" (click)="cambiarOperador($event)">Potencia<br><br>
+    Mostrar milésimas
+    <select (click)="cambiar_milesimas($event)" value="{{milesimas}}">
+        <option value=",">Milésimas por coma ( , )</option>
+        <option value=".">Milésimas por punto ( . )</option>
+        <option value=" ">Milésimas por vacío (   )</option>
+    </select><br>
+    Mostrar decimales
+    <select (click)="cambiar_decimal($event)" value="{{decimal}}">
+        <option value=",">Decimal por coma ( , )</option>
+        <option value=".">Decimal por punto ( . )</option>
+    </select><br><br>
+    <button (click)="calcular()">Calcular</button><br><br>
+    Resultado: {{resultado}}
+</form>

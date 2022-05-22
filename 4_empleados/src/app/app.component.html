@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="col">
+    <h1 style="text-align: center;">{{titulo}}</h1>
+  </div>
+
+  <br><br>
+
+  <form class="form-group row">
+
+    <div class="form-group col-md-3"> <!-- Etiqueda y cuadro de texto abajo (3 ancho del cuadro de texto) -->
+      <label for="apellido">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="caja_nombre">
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label for="apellido">Apellido:</label>
+      <input type="text" name="apellido" id="apellido" class="form-control" [(ngModel)]="caja_apellido">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="cargo">Cargo:</label>
+      <input type="text" name="cargo" id="cargo" class="form-control" [(ngModel)]="caja_cargo">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="salario">Salario:</label>
+      <input type="number" name="salario" id="salario" class="form-control" [(ngModel)]="caja_salario">
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-primary" (click)="registrar()" style="margin-top: 20px;">REGISTRAR</button>
+    </div>
+
+  </form>
+
+
+</div>
+
+<br><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="row">
+      
+    </div>
+    <div class="col">
+      <div *ngFor="let empleado of empleados; let indice=index">
+        {{indice+1}}.- {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} ${{empleado.salario}}
+      </div>
+    </div>
+  </div>
+</div>

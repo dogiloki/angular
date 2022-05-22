@@ -1,0 +1,10 @@
+<p>Nombre del empleado: {{getNameFull()}}</p>
+<p>Edad del empleado: {{edad}} - {{edad>=18?"mayor":"menor"}} de edad</p>
+<input type="number" #caja_edad placeholder="Edad" [disabled]="caja_habilitada" [(ngModel)]="edad">
+<p>Empresa del empleado: {{empresa}}</p>
+
+<br>
+
+{{texo_registro}}
+<br>
+Registrado: <input type="checkbox" id="registro" [checked]="es_registrado" (click)="usuarioRegister()">
