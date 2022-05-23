@@ -39,15 +39,5 @@
 
 <br><br><br>
 
-<div class="container">
-  <div class="row">
-    <div class="row">
-      
-    </div>
-    <div class="col">
-      <div *ngFor="let empleado of empleados; let indice=index">
-        {{indice+1}}.- {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} ${{empleado.salario}}
-      </div>
-    </div>
-  </div>
-</div>
+<!-- [empleados] [indices] envia variables del padre al hijo -->
+<app-empleado-hijo *ngFor="let empleado of empleados; let indice=index" [empleado]="empleado" [indice]="indice"></app-empleado-hijo>
